@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Raxyer Technologies">
+  <rect width="64" height="64" rx="14" fill="#2563eb"/>
+  <g fill="none" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="#fff" d="M13 46V18h9a7 7 0 0 1 0 14H13M21 32l9 14"/>
+    <path stroke="#c4b5fd" d="M36 18h16M44 18v28"/>
+  </g>
+</svg>

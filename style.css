@@ -1,37 +1,58 @@
-:root {
-  color-scheme: light dark;
-  --bg: #f8fafc;
-  --text: #111827;
-  --muted: #64748b;
-  --accent: #059669;
-  --surface: #ecfdf5;
+:root, [data-bs-theme="light"] {
+  --rt-blue: #2563eb;
+  --rt-purple: #7c3aed;
+  --rt-surface: #eef2ff;
+  --bs-link-color-rgb: 37, 99, 235;
+  --bs-link-hover-color-rgb: 124, 58, 237;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0b0e14;
-    --text: #f1f5f9;
-    --muted: #94a3b8;
-    --accent: #34d399;
-    --surface: #34d3991a;
-  }
+[data-bs-theme="dark"] {
+  --rt-blue: #60a5fa;
+  --rt-purple: #a78bfa;
+  --rt-surface: #818cf81a;
+  --bs-body-bg: #0b0e14;
+  --bs-link-color-rgb: 96, 165, 250;
+  --bs-link-hover-color-rgb: 167, 139, 250;
 }
 
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+body { background: var(--bs-body-bg); }
+
+html[lang="en"] [data-lang="es"],
+html[lang="es"] [data-lang="en"] { display: none !important; }
+
+.brand-logo { width: 40px; height: 40px; }
+.hero-logo { width: 88px; height: 88px; }
+
+.hero {
+  background: var(--rt-surface);
+  border-bottom: 1px solid var(--bs-border-color);
 }
 
-main {
-  max-width: 720px;
-  margin: 0 auto;
-  padding: 32px 16px 64px;
+.text-accent { color: var(--rt-purple); }
+.summary { background: var(--rt-surface); border-left: 4px solid var(--rt-purple); }
+.badge-rt { background: var(--rt-purple); color: #fff; }
+
+.btn-rt {
+  --bs-btn-color: var(--rt-blue);
+  --bs-btn-border-color: var(--rt-blue);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--rt-purple);
+  --bs-btn-hover-border-color: var(--rt-purple);
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: var(--rt-purple);
+  --bs-btn-active-border-color: var(--rt-purple);
 }
 
-h1 { font-size: 1.75rem; line-height: 1.25; margin-bottom: 4px; }
-h2 { font-size: 1.15rem; margin-top: 2rem; }
-a { color: var(--accent); }
-.meta { color: var(--muted); margin-top: 0; }
-.summary { background: var(--surface); padding: 16px; border-radius: 12px; }
+.policy h2 {
+  font-size: 1.15rem;
+  margin-top: 2rem;
+  color: var(--rt-blue);
+  scroll-margin-top: 80px;
+}
+.policy h2:first-of-type { margin-top: 0; }
+
+.app-card { transition: transform .15s, box-shadow .15s; }
+.app-card:hover { transform: translateY(-2px); box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .12); }
+
+.toc a { color: var(--bs-secondary-color); text-decoration: none; }
+.toc a:hover { color: var(--rt-purple); }
